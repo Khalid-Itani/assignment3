@@ -8,7 +8,7 @@ const App = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    d3.csv("/tips.csv").then((data) => {
+    d3.csv(process.env.PUBLIC_URL + "/tips.csv").then((data) => {
       data.forEach((d) => {
         d.total_bill = +d.total_bill;
         d.tip = +d.tip;
